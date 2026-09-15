@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>YI TUO HUB STUDIO · 把 Markdown 排成高级感</title>
+<meta name="description" content="粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML；18 套基础主题与 15 套高级排版（蓝梦原创视觉）"/>
+<link rel="stylesheet" href="/styles.css"/>
+<link rel="stylesheet" href="/landing.css"/>
+<style>
+  /* React mounts inside #root; give it the flex chain the original app gets
+     from body > header/main/footer directly, so .preview-wrap can scroll. */
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Project additions (not in the verbatim AGPL styles.css):
+     the compliance badge is a real <button>, and the toast supports an
+     undo action — both need small style glue. */
+  .pane-toolbar button.badge {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+  .toast-action {
+    margin-left: 12px;
+    padding: 2px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .toast-action:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

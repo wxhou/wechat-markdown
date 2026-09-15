@@ -1,0 +1,2322 @@
+{
+  "schema_version": "production-motion-component-library.v6",
+  "status": "review-ready",
+  "source_static_release": "production-template.static-final.v24",
+  "style_count": 15,
+  "component_count": 74,
+  "roles": [
+    "decor",
+    "frame",
+    "section-title",
+    "tail",
+    "title"
+  ],
+  "compatibility": "WSVG-006 dual-path fallback plus conservative SMIL",
+  "pair_policy": "V6 changes only Soft Clay title central arches; motion/static siblings retain identical geometry",
+  "components": [
+    {
+      "component_id": "production-motion.title.editorial-vermilion.v6",
+      "style": "editorial-vermilion",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/editorial-vermilion/static_title_editorial-vermilion_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/editorial-vermilion/motion_title_editorial-vermilion_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.reed.cluster.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "editorial-vermilion.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "editorial-vermilion.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.reed.cluster.v1; editorial-vermilion.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.editorial-vermilion.v6",
+      "style": "editorial-vermilion",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/editorial-vermilion/static_frame_editorial-vermilion_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/editorial-vermilion/motion_frame_editorial-vermilion_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.reed.cluster.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "editorial-vermilion.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "editorial-vermilion.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.reed.cluster.v1; editorial-vermilion.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.editorial-vermilion.v6",
+      "style": "editorial-vermilion",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/editorial-vermilion/static_section-title_editorial-vermilion_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/editorial-vermilion/motion_section-title_editorial-vermilion_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "section-title.continuity-rail.v14.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "section-title.continuity-rail.v14.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "section-title.continuity-rail.v14.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.editorial-vermilion.v6",
+      "style": "editorial-vermilion",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/editorial-vermilion/static_decor_editorial-vermilion_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/editorial-vermilion/motion_decor_editorial-vermilion_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.reed.cluster.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "editorial-vermilion.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "editorial-vermilion.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.reed.cluster.v1; editorial-vermilion.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.editorial-vermilion.v6",
+      "style": "editorial-vermilion",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/editorial-vermilion/static_tail_editorial-vermilion_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/editorial-vermilion/motion_tail_editorial-vermilion_v6.svg",
+      "motion_kind": "sway+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.reed.cluster.v1",
+          "count": 1
+        },
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "editorial.horizon.v1.motion-trail.v4",
+          "count": 2
+        }
+      ],
+      "preparation": {
+        "trail_unit": "editorial.horizon.v1.motion-trail.v4",
+        "trail_count": 2,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.reed.cluster.v1; botanical.sprig.assembled.v1; editorial.horizon.v1.motion-trail.v4",
+      "animation_count": 4,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.mono-gold-journal.v6",
+      "style": "mono-gold-journal",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/mono-gold-journal/static_title_mono-gold-journal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mono-gold-journal/motion_title_mono-gold-journal_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "mono-gold-journal.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mono-gold-journal.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; mono-gold-journal.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.mono-gold-journal.v6",
+      "style": "mono-gold-journal",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/mono-gold-journal/static_frame_mono-gold-journal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mono-gold-journal/motion_frame_mono-gold-journal_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "mono-gold-journal.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mono-gold-journal.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; mono-gold-journal.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.mono-gold-journal.v6",
+      "style": "mono-gold-journal",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/mono-gold-journal/static_section-title_mono-gold-journal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mono-gold-journal/motion_section-title_mono-gold-journal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "section-title.continuity-rail.v14.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "section-title.continuity-rail.v14.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "section-title.continuity-rail.v14.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.mono-gold-journal.v6",
+      "style": "mono-gold-journal",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/mono-gold-journal/static_decor_mono-gold-journal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mono-gold-journal/motion_decor_mono-gold-journal_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "mono-gold-journal.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mono-gold-journal.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; mono-gold-journal.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.mono-gold-journal.v6",
+      "style": "mono-gold-journal",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/mono-gold-journal/static_tail_mono-gold-journal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mono-gold-journal/motion_tail_mono-gold-journal_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "mono-gold-journal.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mono-gold-journal.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; mono-gold-journal.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.coral-zine.v6",
+      "style": "coral-zine",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/coral-zine/static_title_coral-zine_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/coral-zine/motion_title_coral-zine_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "coral-zine.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "coral-zine.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "coral-zine.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.coral-zine.v6",
+      "style": "coral-zine",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/coral-zine/static_frame_coral-zine_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/coral-zine/motion_frame_coral-zine_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "coral-zine.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "coral-zine.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "coral-zine.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.coral-zine.v6",
+      "style": "coral-zine",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/coral-zine/static_section-title_coral-zine_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/coral-zine/motion_section-title_coral-zine_v6.svg",
+      "motion_kind": "pulse",
+      "motion_tracks": [
+        {
+          "kind": "pulse",
+          "target": "svg-root",
+          "count": 1
+        }
+      ],
+      "preparation": {},
+      "target": "svg-root",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.coral-zine.v6",
+      "style": "coral-zine",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/coral-zine/static_decor_coral-zine_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/coral-zine/motion_decor_coral-zine_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "coral-zine.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "coral-zine.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "coral-zine.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.coral-zine.v6",
+      "style": "coral-zine",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/coral-zine/static_tail_coral-zine_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/coral-zine/motion_tail_coral-zine_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "coral-zine.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "coral-zine.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "coral-zine.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.swiss-signal.v6",
+      "style": "swiss-signal",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/swiss-signal/static_title_swiss-signal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/swiss-signal/motion_title_swiss-signal_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "swiss-signal.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "swiss-signal.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; swiss-signal.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.swiss-signal.v6",
+      "style": "swiss-signal",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/swiss-signal/static_frame_swiss-signal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/swiss-signal/motion_frame_swiss-signal_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "swiss-signal.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "swiss-signal.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; swiss-signal.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.swiss-signal.v6",
+      "style": "swiss-signal",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/swiss-signal/static_section-title_swiss-signal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/swiss-signal/motion_section-title_swiss-signal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "section-title.continuity-rail.v14.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "section-title.continuity-rail.v14.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "section-title.continuity-rail.v14.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.swiss-signal.v6",
+      "style": "swiss-signal",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/swiss-signal/static_decor_swiss-signal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/swiss-signal/motion_decor_swiss-signal_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "swiss-signal.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 1,
+        "trail_unit": "swiss-signal.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; swiss-signal.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.swiss-signal.v6",
+      "style": "swiss-signal",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/swiss-signal/static_tail_swiss-signal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/swiss-signal/motion_tail_swiss-signal_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "swiss-signal.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "swiss-signal.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; swiss-signal.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.citrus-report.v6",
+      "style": "citrus-report",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/citrus-report/static_title_citrus-report_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/citrus-report/motion_title_citrus-report_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "citrus.slice.v2",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "citrus-report.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "citrus-report.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "citrus.slice.v2; citrus-report.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.citrus-report.v6",
+      "style": "citrus-report",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/citrus-report/static_frame_citrus-report_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/citrus-report/motion_frame_citrus-report_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "citrus.slice.v2",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "citrus-report.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "citrus-report.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "citrus.slice.v2; citrus-report.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.citrus-report.v6",
+      "style": "citrus-report",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/citrus-report/static_section-title_citrus-report_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/citrus-report/motion_section-title_citrus-report_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "citrus.slice.segmented.v19",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "citrus.raised-straight-underline.v19.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "citrus.raised-straight-underline.v19.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "citrus.slice.segmented.v19; citrus.raised-straight-underline.v19.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.citrus-report.v6",
+      "style": "citrus-report",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/citrus-report/static_decor_citrus-report_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/citrus-report/motion_decor_citrus-report_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "citrus.decor-primary.v3.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "citrus-report.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "citrus-report.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "citrus.decor-primary.v3.assembled; citrus-report.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.citrus-report.v6",
+      "style": "citrus-report",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/citrus-report/static_tail_citrus-report_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/citrus-report/motion_tail_citrus-report_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "citrus.slice.v2",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "citrus-report.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "citrus-report.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "citrus.slice.v2; citrus-report.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.blueprint-grid.v6",
+      "style": "blueprint-grid",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/blueprint-grid/static_title_blueprint-grid_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/blueprint-grid/motion_title_blueprint-grid_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "blueprint.target.rotating-body.v5",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "blueprint-grid.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "blueprint-grid.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "blueprint_radar_splits": 2,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "blueprint.target.rotating-body.v5; blueprint-grid.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.blueprint-grid.v6",
+      "style": "blueprint-grid",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/blueprint-grid/static_frame_blueprint-grid_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/blueprint-grid/motion_frame_blueprint-grid_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "blueprint.target.rotating-body.v5",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "blueprint-grid.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "blueprint-grid.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "blueprint_radar_splits": 2,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "blueprint.target.rotating-body.v5; blueprint-grid.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.blueprint-grid.v6",
+      "style": "blueprint-grid",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/blueprint-grid/static_section-title_blueprint-grid_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/blueprint-grid/motion_section-title_blueprint-grid_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "blueprint.compass-outline.v16",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "blueprint.stepped-rail.v16.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "blueprint.stepped-rail.v16.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "blueprint.compass-outline.v16; blueprint.stepped-rail.v16.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.blueprint-grid.v6",
+      "style": "blueprint-grid",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/blueprint-grid/static_decor_blueprint-grid_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/blueprint-grid/motion_decor_blueprint-grid_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "blueprint.target.rotating-body.v5",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "blueprint-grid.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "blueprint-grid.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "blueprint_radar_splits": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "blueprint.target.rotating-body.v5; blueprint-grid.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.blueprint-grid.v6",
+      "style": "blueprint-grid",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/blueprint-grid/static_tail_blueprint-grid_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/blueprint-grid/motion_tail_blueprint-grid_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "blueprint.target.rotating-body.v5",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "blueprint-grid.tail.continuity-spine.v2.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "blueprint-grid.tail.continuity-spine.v2.motion-trail.v4",
+        "trail_count": 1,
+        "blueprint_radar_splits": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "blueprint.target.rotating-body.v5; blueprint-grid.tail.continuity-spine.v2.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.rice-paper.v6",
+      "style": "rice-paper",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/rice-paper/static_title_rice-paper_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/rice-paper/motion_title_rice-paper_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "rice-paper.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "rice-paper.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "rice-paper.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.rice-paper.v6",
+      "style": "rice-paper",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/rice-paper/static_frame_rice-paper_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/rice-paper/motion_frame_rice-paper_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "rice-paper.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "rice-paper.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "rice-paper.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.rice-paper.v6",
+      "style": "rice-paper",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/rice-paper/static_section-title_rice-paper_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/rice-paper/motion_section-title_rice-paper_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "rice.cinnabar-main-rail.v17.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "rice.cinnabar-main-rail.v17.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "rice.cinnabar-main-rail.v17.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.rice-paper.v6",
+      "style": "rice-paper",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/rice-paper/static_decor_rice-paper_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/rice-paper/motion_decor_rice-paper_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "rice-paper.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "rice-paper.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "rice-paper.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.rice-paper.v6",
+      "style": "rice-paper",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/rice-paper/static_tail_rice-paper_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/rice-paper/motion_tail_rice-paper_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "rice-paper.tail.continuity-spine.v2.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "rice-paper.tail.continuity-spine.v2.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "rice-paper.tail.continuity-spine.v2.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.botanical-notes.v6",
+      "style": "botanical-notes",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/botanical-notes/static_title_botanical-notes_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/botanical-notes/motion_title_botanical-notes_v6.svg",
+      "motion_kind": "sway+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.title.left-branch-with-leaves.v4",
+          "count": 1
+        },
+        {
+          "kind": "sway",
+          "target": "botanical.title.right-branch-with-leaves.v4",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "botanical.title.continuity-spine.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "semantic_wrappers": [
+          "botanical.title.left-branch-with-leaves.v4",
+          "botanical.title.right-branch-with-leaves.v4"
+        ],
+        "trail_unit": "botanical.title.continuity-spine.v21.motion-trail.v4",
+        "trail_count": 1,
+        "bound_bud_groups": 2,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.title.left-branch-with-leaves.v4; botanical.title.right-branch-with-leaves.v4; botanical.title.continuity-spine.v21.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.botanical-notes.v6",
+      "style": "botanical-notes",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/botanical-notes/static_frame_botanical-notes_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/botanical-notes/motion_frame_botanical-notes_v6.svg",
+      "motion_kind": "sway+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.frame.top-branch-with-leaves.v4",
+          "count": 1
+        },
+        {
+          "kind": "sway",
+          "target": "botanical.frame.bottom-branch-with-leaves.v4",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "botanical.frame.continuity-spine.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "semantic_wrappers": [
+          "botanical.frame.top-branch-with-leaves.v4",
+          "botanical.frame.bottom-branch-with-leaves.v4"
+        ],
+        "trail_unit": "botanical.frame.continuity-spine.v21.motion-trail.v4",
+        "trail_count": 1,
+        "bound_bud_groups": 2,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.frame.top-branch-with-leaves.v4; botanical.frame.bottom-branch-with-leaves.v4; botanical.frame.continuity-spine.v21.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.botanical-notes.v6",
+      "style": "botanical-notes",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/botanical-notes/static_section-title_botanical-notes_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/botanical-notes/motion_section-title_botanical-notes_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.compact-c-wreath.v20",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "botanical.fine-straight-rail.v20.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "botanical.fine-straight-rail.v20.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.compact-c-wreath.v20; botanical.fine-straight-rail.v20.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.botanical-notes.v6",
+      "style": "botanical-notes",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/botanical-notes/static_decor_botanical-notes_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/botanical-notes/motion_decor_botanical-notes_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "botanical-notes.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "botanical-notes.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; botanical-notes.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.botanical-notes.v6",
+      "style": "botanical-notes",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/botanical-notes/static_tail_botanical-notes_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/botanical-notes/motion_tail_botanical-notes_v6.svg",
+      "motion_kind": "sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "sway",
+          "target": "botanical.sprig.assembled.v1",
+          "count": 4
+        },
+        {
+          "kind": "flow",
+          "target": "botanical-notes.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "botanical-notes.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "botanical.sprig.assembled.v1; botanical-notes.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 5,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.soft-clay.v6",
+      "style": "soft-clay",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/soft-clay/static_title_soft-clay_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/soft-clay/motion_title_soft-clay_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "soft-clay.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "soft-clay.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        },
+        "soft_clay_arch_v6": {
+          "scope": "central U-shaped arches only",
+          "left": "double open arch; right legs terminate above title safe area",
+          "right": "single open arch; left leg removed from title safe area",
+          "locked": "perimeter ornaments, bottom paths, nodes, small arch, theme clusters"
+        }
+      },
+      "target": "soft-clay.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.soft-clay.v6",
+      "style": "soft-clay",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/soft-clay/static_frame_soft-clay_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/soft-clay/motion_frame_soft-clay_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "soft-clay.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "soft-clay.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "soft-clay.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.soft-clay.v6",
+      "style": "soft-clay",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/soft-clay/static_section-title_soft-clay_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/soft-clay/motion_section-title_soft-clay_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "soft-clay.sculpted-ribbon.v18.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "soft-clay.sculpted-ribbon.v18.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "soft-clay.sculpted-ribbon.v18.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.soft-clay.v6",
+      "style": "soft-clay",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/soft-clay/static_decor_soft-clay_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/soft-clay/motion_decor_soft-clay_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "soft-clay.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "soft-clay.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "soft-clay.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.soft-clay.v6",
+      "style": "soft-clay",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/soft-clay/static_tail_soft-clay_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/soft-clay/motion_tail_soft-clay_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "soft-clay.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "soft-clay.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "soft-clay.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.deep-sea-terminal.v6",
+      "style": "deep-sea-terminal",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/deep-sea-terminal/static_title_deep-sea-terminal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/deep-sea-terminal/motion_title_deep-sea-terminal_v6.svg",
+      "motion_kind": "rotate+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 2
+        },
+        {
+          "kind": "sway",
+          "target": "marine.coral.branch.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "deep-sea-terminal.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "deep-sea-terminal.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; marine.coral.branch.v1; deep-sea-terminal.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 5,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.deep-sea-terminal.v6",
+      "style": "deep-sea-terminal",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/deep-sea-terminal/static_frame_deep-sea-terminal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/deep-sea-terminal/motion_frame_deep-sea-terminal_v6.svg",
+      "motion_kind": "rotate+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 2
+        },
+        {
+          "kind": "sway",
+          "target": "marine.coral.branch.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "deep-sea-terminal.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "deep-sea-terminal.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; marine.coral.branch.v1; deep-sea-terminal.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 5,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.deep-sea-terminal.v6",
+      "style": "deep-sea-terminal",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/deep-sea-terminal/static_section-title_deep-sea-terminal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/deep-sea-terminal/motion_section-title_deep-sea-terminal_v6.svg",
+      "motion_kind": "pulse",
+      "motion_tracks": [
+        {
+          "kind": "pulse",
+          "target": "svg-root",
+          "count": 1
+        }
+      ],
+      "preparation": {},
+      "target": "svg-root",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.deep-sea-terminal.v6",
+      "style": "deep-sea-terminal",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/deep-sea-terminal/static_decor_deep-sea-terminal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/deep-sea-terminal/motion_decor_deep-sea-terminal_v6.svg",
+      "motion_kind": "rotate+sway+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 1
+        },
+        {
+          "kind": "sway",
+          "target": "marine.coral.branch.v1",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "deep-sea-terminal.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 1,
+        "trail_unit": "deep-sea-terminal.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; marine.coral.branch.v1; deep-sea-terminal.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 3,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.deep-sea-terminal.v6",
+      "style": "deep-sea-terminal",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/deep-sea-terminal/static_tail_deep-sea-terminal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/deep-sea-terminal/motion_tail_deep-sea-terminal_v6.svg",
+      "motion_kind": "rotate+sway+flow+swim",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "technical.target.rotating-body.v4",
+          "count": 1
+        },
+        {
+          "kind": "sway",
+          "target": "marine.coral.branch.v1",
+          "count": 2
+        },
+        {
+          "kind": "flow",
+          "target": "marine.tidal.ribbon.v1.motion-trail.v4",
+          "count": 1
+        },
+        {
+          "kind": "swim",
+          "target": "marine.fish.loop.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 1,
+        "fish_loops": 1,
+        "trail_unit": "marine.tidal.ribbon.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "technical.target.rotating-body.v4; marine.coral.branch.v1; marine.tidal.ribbon.v1.motion-trail.v4; marine.fish.loop.v4",
+      "animation_count": 5,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.mist-research.v6",
+      "style": "mist-research",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/mist-research/static_title_mist-research_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mist-research/motion_title_mist-research_v6.svg",
+      "motion_kind": "pulse",
+      "motion_tracks": [
+        {
+          "kind": "pulse",
+          "target": "data-motion-slot=title-pulse",
+          "count": 1
+        }
+      ],
+      "preparation": {},
+      "target": "data-motion-slot=title-pulse",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.mist-research.v6",
+      "style": "mist-research",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/mist-research/static_frame_mist-research_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mist-research/motion_frame_mist-research_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "mist-research.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mist-research.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "mist-research.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.mist-research.v6",
+      "style": "mist-research",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/mist-research/static_section-title_mist-research_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mist-research/motion_section-title_mist-research_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "section-title.continuity-rail.v14.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "section-title.continuity-rail.v14.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "section-title.continuity-rail.v14.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.mist-research.v6",
+      "style": "mist-research",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/mist-research/static_decor_mist-research_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mist-research/motion_decor_mist-research_v6.svg",
+      "motion_kind": "pulse",
+      "motion_tracks": [
+        {
+          "kind": "pulse",
+          "target": "data-unit=mist.decor.sample-nodes.v2",
+          "count": 1
+        }
+      ],
+      "preparation": {},
+      "target": "data-unit=mist.decor.sample-nodes.v2",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.mist-research.v6",
+      "style": "mist-research",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/mist-research/static_tail_mist-research_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/mist-research/motion_tail_mist-research_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "mist.tail.structural-spine.v2.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "mist.tail.structural-spine.v2.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "mist.tail.structural-spine.v2.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.violet-studio.v6",
+      "style": "violet-studio",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/violet-studio/static_title_violet-studio_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/violet-studio/motion_title_violet-studio_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "violet.title.planet.v20.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "violet.title.transit-route.v20.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "violet.title.transit-route.v20.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "violet.title.planet.v20.assembled; violet.title.transit-route.v20.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.violet-studio.v6",
+      "style": "violet-studio",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/violet-studio/static_frame_violet-studio_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/violet-studio/motion_frame_violet-studio_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "violet.frame.continuity-spine.v16.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "violet.frame.continuity-spine.v16.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "violet.frame.continuity-spine.v16.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.violet-studio.v6",
+      "style": "violet-studio",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/violet-studio/static_section-title_violet-studio_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/violet-studio/motion_section-title_violet-studio_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "violet.planet.v18",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "violet.low-amplitude-wave-rail.v18.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "violet.low-amplitude-wave-rail.v18.motion-trail.v4",
+        "trail_count": 1,
+        "orbit_depth": "closed rear ellipse plus foreground half-ring; ring remains static",
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "violet.planet.v18; violet.low-amplitude-wave-rail.v18.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.violet-studio.v6",
+      "style": "violet-studio",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/violet-studio/static_decor_violet-studio_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/violet-studio/motion_decor_violet-studio_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "violet.decor.planet.v20.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "violet.decor.continuity-spine.v20.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "violet.decor.continuity-spine.v20.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "violet.decor.planet.v20.assembled; violet.decor.continuity-spine.v20.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.violet-studio.v6",
+      "style": "violet-studio",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/violet-studio/static_tail_violet-studio_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/violet-studio/motion_tail_violet-studio_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "violet.tail.planet.v20.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "violet.tail.transit-route.v20.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "violet.tail.transit-route.v20.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "violet.tail.planet.v20.assembled; violet.tail.transit-route.v20.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.neo-brutal.v6",
+      "style": "neo-brutal",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/neo-brutal/static_title_neo-brutal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/neo-brutal/motion_title_neo-brutal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "neo-brutal.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "neo-brutal.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "neo-brutal.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.neo-brutal.v6",
+      "style": "neo-brutal",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/neo-brutal/static_frame_neo-brutal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/neo-brutal/motion_frame_neo-brutal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "neo-brutal.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 2,
+        "trail_unit": "neo-brutal.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "neo-brutal.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.neo-brutal.v6",
+      "style": "neo-brutal",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/neo-brutal/static_decor_neo-brutal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/neo-brutal/motion_decor_neo-brutal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "neo-brutal.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "radar_splits": 1,
+        "trail_unit": "neo-brutal.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "neo-brutal.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.neo-brutal.v6",
+      "style": "neo-brutal",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/neo-brutal/static_tail_neo-brutal_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/neo-brutal/motion_tail_neo-brutal_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "neo-brutal.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "neo-brutal.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "neo-brutal.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.night-editorial.v6",
+      "style": "night-editorial",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/night-editorial/static_title_night-editorial_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/night-editorial/motion_title_night-editorial_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "night.title.horizon.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "night.title.horizon.v21.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "night.title.horizon.v21.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.night-editorial.v6",
+      "style": "night-editorial",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/night-editorial/static_frame_night-editorial_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/night-editorial/motion_frame_night-editorial_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "night.frame.moon-seal.v21.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "night.frame.horizon.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "night.frame.horizon.v21.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "night.frame.moon-seal.v21.assembled; night.frame.horizon.v21.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.night-editorial.v6",
+      "style": "night-editorial",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/night-editorial/static_section-title_night-editorial_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/night-editorial/motion_section-title_night-editorial_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "night.moon-medallion.v15",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "night.gold-horizon.v15.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "night.gold-horizon.v15.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "night.moon-medallion.v15; night.gold-horizon.v15.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.night-editorial.v6",
+      "style": "night-editorial",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/night-editorial/static_decor_night-editorial_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/night-editorial/motion_decor_night-editorial_v6.svg",
+      "motion_kind": "rotate+flow",
+      "motion_tracks": [
+        {
+          "kind": "rotate",
+          "target": "night.decor.moon-seal.v21.assembled",
+          "count": 1
+        },
+        {
+          "kind": "flow",
+          "target": "night.decor.continuity-spine.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "night.decor.continuity-spine.v21.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "night.decor.moon-seal.v21.assembled; night.decor.continuity-spine.v21.motion-trail.v4",
+      "animation_count": 2,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.night-editorial.v6",
+      "style": "night-editorial",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/night-editorial/static_tail_night-editorial_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/night-editorial/motion_tail_night-editorial_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "night.tail.horizon.v21.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "night.tail.horizon.v21.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "night.tail.horizon.v21.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.title.archive-sepia.v6",
+      "style": "archive-sepia",
+      "role": "title",
+      "static_file": "assets/production-motion-v6/archive-sepia/static_title_archive-sepia_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/archive-sepia/motion_title_archive-sepia_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "archive-sepia.title.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "archive-sepia.title.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "archive-sepia.title.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.frame.archive-sepia.v6",
+      "style": "archive-sepia",
+      "role": "frame",
+      "static_file": "assets/production-motion-v6/archive-sepia/static_frame_archive-sepia_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/archive-sepia/motion_frame_archive-sepia_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "archive-sepia.frame.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "archive-sepia.frame.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "archive-sepia.frame.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.section-title.archive-sepia.v6",
+      "style": "archive-sepia",
+      "role": "section-title",
+      "static_file": "assets/production-motion-v6/archive-sepia/static_section-title_archive-sepia_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/archive-sepia/motion_section-title_archive-sepia_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "section-title.continuity-rail.v14.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "section-title.continuity-rail.v14.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "section-title.continuity-rail.v14.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.decor.archive-sepia.v6",
+      "style": "archive-sepia",
+      "role": "decor",
+      "static_file": "assets/production-motion-v6/archive-sepia/static_decor_archive-sepia_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/archive-sepia/motion_decor_archive-sepia_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "archive-sepia.decor.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "archive-sepia.decor.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "archive-sepia.decor.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    },
+    {
+      "component_id": "production-motion.tail.archive-sepia.v6",
+      "style": "archive-sepia",
+      "role": "tail",
+      "static_file": "assets/production-motion-v6/archive-sepia/static_tail_archive-sepia_motion-v6.svg",
+      "motion_file": "assets/production-motion-v6/archive-sepia/motion_tail_archive-sepia_v6.svg",
+      "motion_kind": "flow",
+      "motion_tracks": [
+        {
+          "kind": "flow",
+          "target": "archive-sepia.tail.continuity-spine.v1.motion-trail.v4",
+          "count": 1
+        }
+      ],
+      "preparation": {
+        "trail_unit": "archive-sepia.tail.continuity-spine.v1.motion-trail.v4",
+        "trail_count": 1,
+        "flow_contrast": {
+          "base_opacity": 0.34,
+          "trail_width_delta": 1.0,
+          "trail_opacity": 0.94
+        }
+      },
+      "target": "archive-sepia.tail.continuity-spine.v1.motion-trail.v4",
+      "animation_count": 1,
+      "geometry_identity": "passed",
+      "provenance": "clean-room derivation from public static-final v24; compatibility rules abstracted from SVG Lab"
+    }
+  ],
+  "source_motion_release": "production-motion-component-library.v5"
+}

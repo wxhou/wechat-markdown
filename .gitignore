@@ -24,3 +24,9 @@ vite.config.d.ts
 vitest.config.js
 vitest.config.d.ts
 *.tsbuildinfo
+
+# Local tooling (openspec-pw scaffold) — not part of the repo
+tests/
+playwright.config.ts
+.claude/
+.mcp.json

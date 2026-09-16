@@ -2,7 +2,7 @@
 
 本地 1:1 复刻 [YI TUO HUB STUDIO](https://studio.yituohub.com/) 的 React 实现——粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML。
 
-> 原项目为 **AGPL-3.0** 开源（[yan9651688/yituo-hub](https://github.com/yan9651688/yituo-hub)）。本仓库的渲染管线与样式系统移植自原站（见 [LICENSE.md](./LICENSE.md)），同样以 AGPL-3.0 分发。
+> 原项目为 **AGPL-3.0** 开源（[yan9651688/yituo-hub](https://github.com/yan9651688/yituo-hub)）。本仓库的渲染管线与样式系统移植自原站（见 [LICENSE](./LICENSE)），同样以 AGPL-3.0 分发。
 
 ## 快速开始
 
@@ -52,4 +52,4 @@ src/
 
 ## 许可
 
-AGPL-3.0 —— 详见 [LICENSE.md](./LICENSE.md)。基于 [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) 与 [wechat-motion-layout-studio](https://github.com/lanmengSakura/wechat-motion-layout-studio) 融合打造的原项目。
+AGPL-3.0 —— 详见 [LICENSE](./LICENSE)。基于 [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) 与 [wechat-motion-layout-studio](https://github.com/lanmengSakura/wechat-motion-layout-studio) 融合打造的原项目。

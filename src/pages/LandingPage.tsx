@@ -123,7 +123,7 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    document.title = 'YI TUO HUB STUDIO · 把 Markdown 排成高级感';
+    document.title = '公众号排版 · 把 Markdown 排成高级感';
     document.body.className = 'landing';
     return () => {
       document.body.className = '';

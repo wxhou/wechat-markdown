@@ -1,0 +1,6 @@
+# Cloudflare Pages 响应头加固
+# nosniff 防 MIME 嗅探；referrer 只带 origin；禁止被第三方 iframe 嵌套
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY

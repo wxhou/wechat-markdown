@@ -180,6 +180,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   font: inherit;
   font-size: 11px;
   letter-spacing: 0.12em;
+  white-space: nowrap;
   color: rgba(29, 48, 69, 0.62);
   background: transparent;
   cursor: pointer;

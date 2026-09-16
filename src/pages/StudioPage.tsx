@@ -16,7 +16,7 @@ export default function StudioPage() {
   const s = useStudio();
 
   useEffect(() => {
-    document.title = 'YI TUO HUB STUDIO · 排版工坊';
+    document.title = '公众号排版 · 排版工坊';
     document.body.className = '';
   }, []);
 

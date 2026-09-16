@@ -30,3 +30,4 @@ tests/
 playwright.config.ts
 .claude/
 .mcp.json
+AGENTS.md

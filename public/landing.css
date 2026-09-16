@@ -18,11 +18,14 @@
 
 .layer { position: absolute; inset: 0; will-change: transform; transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
 
-/* 照片级雪山：Pexels 免版权图（assets/mountains-hero.jpg），微放大留出视差余量 */
+/* 主页背景：4 张免版权图由 React 按选择注入（堆叠淡入切换），微放大留出视差余量 */
 .hero-photo {
   position: absolute;
   inset: -4%;
-  background: url('assets/mountains-hero.jpg') center 42% / cover no-repeat;
+  background-position: center 42%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease;
 }
 .hero-veil {
   position: absolute;
@@ -154,6 +157,37 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 }
 .circle-cta:hover { background: var(--dark); color: #fff; border-color: var(--dark); transform: translateX(5px); }
 
+/* 背景切换器：底部居中的胶囊分段控件 */
+.bg-switcher {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(29, 48, 69, 0.14);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.bg-switcher button {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(29, 48, 69, 0.62);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.bg-switcher button:hover { color: var(--dark); }
+.bg-switcher button.active { background: var(--dark); color: #fff; }
+
 .scene-foot {
   position: absolute;
   left: 0; right: 0; bottom: 0;
@@ -171,6 +205,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   .scene-content { left: 6vw; right: 6vw; top: 26vh; }
   .scene-foot span:last-child { display: none; }
   .circle-cta { right: 6vw; }
+  .bg-switcher button { padding: 5px 10px; letter-spacing: 0.06em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .fog, .layer { animation: none !important; transition: none !important; }

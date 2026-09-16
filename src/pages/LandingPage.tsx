@@ -1,5 +1,27 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, LogoSvg } from '../components/icons';
+
+/** 主页背景候选（Unsplash 免版权直链下载的本地副本，assets/ 下随构建分发） */
+const HERO_BACKGROUNDS = [
+  { id: 'alpine', src: 'assets/mountains-hero.jpg', label: '雪山' },
+  { id: 'misty', src: 'assets/hero-misty-peaks.jpg', label: '雾山' },
+  { id: 'clouds', src: 'assets/hero-cloud-sea.jpg', label: '云海' },
+  { id: 'forest', src: 'assets/hero-snow-forest.jpg', label: '雪林' },
+] as const;
+
+type HeroBgId = (typeof HERO_BACKGROUNDS)[number]['id'];
+
+const HERO_BG_KEY = 'md2gzh.v1.heroBg';
+
+function loadHeroBg(): HeroBgId {
+  try {
+    const saved = localStorage.getItem(HERO_BG_KEY);
+    if (saved && HERO_BACKGROUNDS.some((bg) => bg.id === saved)) return saved as HeroBgId;
+  } catch {
+    // 隐私模式等 localStorage 不可用时走默认
+  }
+  return 'misty';
+}
 
 /**
  * Landing page — faithful port of the original AGPL-3.0 site
@@ -8,6 +30,40 @@ import { ArrowRightIcon, LogoSvg } from '../components/icons';
  */
 export default function LandingPage() {
   const layersRef = useRef<Array<HTMLElement | null>>([]);
+  const [heroBg, setHeroBg] = useState<HeroBgId>(loadHeroBg);
+  const [revealed, setRevealed] = useState<ReadonlySet<HeroBgId>>(() => new Set([loadHeroBg()]));
+
+  const selectBg = (id: HeroBgId) => {
+    setHeroBg(id);
+    setRevealed((prev) => (prev.has(id) ? prev : new Set(prev).add(id)));
+    try {
+      localStorage.setItem(HERO_BG_KEY, id);
+    } catch {
+      // 忽略持久化失败，仅影响下次刷新的恢复
+    }
+  };
+
+  // 空闲时预载其余背景，保证切换即时淡入
+  useEffect(() => {
+    let cancelled = false;
+    const preload = () => {
+      if (!cancelled) setRevealed(new Set(HERO_BACKGROUNDS.map((bg) => bg.id)));
+    };
+    const dispose =
+      'requestIdleCallback' in window
+        ? (() => {
+            const handle = requestIdleCallback(preload);
+            return () => cancelIdleCallback(handle);
+          })()
+        : (() => {
+            const t = setTimeout(preload, 1200);
+            return () => clearTimeout(t);
+          })();
+    return () => {
+      cancelled = true;
+      dispose();
+    };
+  }, []);
 
   useEffect(() => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -94,8 +150,19 @@ export default function LandingPage() {
       </header>
 
       <main className="scene">
-        <div className="layer" data-depth="0.3" ref={(el) => { layersRef.current[0] = el; }}>
-          <div className="hero-photo" role="img" aria-label="云海之上的层叠雪山" />
+        <div className="layer" data-depth="0.3" ref={(el) => { layersRef.current[0] = el; }} role="img" aria-label="主页背景照片">
+          {HERO_BACKGROUNDS.map((bg) => (
+            <div
+              key={bg.id}
+              className="hero-photo"
+              aria-hidden="true"
+              style={
+                revealed.has(bg.id)
+                  ? { backgroundImage: `url('${bg.src}')`, opacity: bg.id === heroBg ? 1 : 0 }
+                  : { opacity: 0 }
+              }
+            />
+          ))}
         </div>
         <div className="hero-veil" />
 
@@ -125,6 +192,20 @@ export default function LandingPage() {
         <a href="/studio" className="circle-cta rise" style={{ animationDelay: '.6s' }} aria-label="进入排版工坊">
           <ArrowRightIcon size={18} strokeWidth={1.8} />
         </a>
+
+        <div className="bg-switcher" role="group" aria-label="切换主页背景">
+          {HERO_BACKGROUNDS.map((bg) => (
+            <button
+              key={bg.id}
+              type="button"
+              aria-pressed={bg.id === heroBg}
+              className={bg.id === heroBg ? 'active' : undefined}
+              onClick={() => selectBg(bg.id)}
+            >
+              {bg.label}
+            </button>
+          ))}
+        </div>
       </main>
     </>
   );

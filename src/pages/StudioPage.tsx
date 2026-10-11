@@ -29,7 +29,6 @@ export default function StudioPage() {
           </span>
           <div>
             <h1>公众号排版</h1>
-            <p>Markdown → WeChat HTML Studio</p>
           </div>
         </div>
         <div className="actions">
@@ -154,13 +153,6 @@ export default function StudioPage() {
           )}
         </section>
       </main>
-
-      <footer className="foot rise" style={{ animationDelay: '.2s' }}>
-        基于 <a href="https://github.com/isjiamu/gzh-design-skill" target="_blank" rel="noopener">gzh-design-skill</a>
-        {' '}与{' '}
-        <a href="https://github.com/lanmengSakura/wechat-motion-layout-studio" target="_blank" rel="noopener">wechat-motion-layout-studio</a>
-        {' '}融合打造 · AGPL-3.0 开源
-      </footer>
 
       <div className="toast" role="status" aria-live="polite" hidden={!s.toast}>
         {s.toast?.text}

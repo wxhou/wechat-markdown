@@ -1,14 +1,33 @@
-# 公众号排版工坊（YI TUO HUB STUDIO 复刻）
+# 公众号排版工坊
 
-本地 1:1 复刻 [YI TUO HUB STUDIO](https://studio.yituohub.com/) 的 React 实现——粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML。
+粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML。网页版开箱即用，另有跨平台桌面版（离线可用）。
 
-> 原项目为 **AGPL-3.0** 开源（[yan9651688/yituo-hub](https://github.com/yan9651688/yituo-hub)）。本仓库的渲染管线与样式系统移植自原站（见 [LICENSE](./LICENSE)），同样以 AGPL-3.0 分发。
+> 渲染管线与样式系统移植自原站 [YI TUO HUB STUDIO](https://studio.yituohub.com/)（**AGPL-3.0**，[yan9651688/yituo-hub](https://github.com/yan9651688/yituo-hub)，见 [LICENSE](./LICENSE)），同样以 AGPL-3.0 分发。品牌 Logo（版心图样）为本项目原创。
 
-## 快速开始
+## 桌面版下载
+
+从 [GitHub Releases](https://github.com/wxhou/wechat-markdown/releases) 按平台下载：
+
+| 平台 | 安装包 | 首次启动 |
+|---|---|---|
+| macOS Apple Silicon / Intel | `.dmg` | **未签名**：右键 → 「打开」绕过 Gatekeeper 提示（只首次需要） |
+| Windows 10/11 | `.exe`（NSIS 安装包） | SmartScreen 提示时点「仍要运行」 |
+| Linux | `.AppImage` | `chmod +x` 后直接运行 |
+
+桌面版启动直达排版工坊（跳过落地页），全部功能与网页版一致，且**离线可用**。数据（文章与设置）存储在应用本地的 WebView 存储区，卸载应用即清空。
+
+自行构建桌面版需要在机器上先安装 [Rust](https://rustup.dev/) 工具链，然后：
 
 ```bash
 npm install
-npm run dev        # 开发模式 → http://127.0.0.1:5173/
+npm run tauri:build   # 产物在 src-tauri/target/release/bundle/
+```
+
+## 快速开始（网页版）
+
+```bash
+npm install
+npm run dev        # 开发模式 → http://127.0.0.1:5188/
 ```
 
 生产构建与预览：
@@ -18,7 +37,7 @@ npm run build      # 产物在 dist/
 npm run preview    # → http://127.0.0.1:4173/
 ```
 
-其他脚本：`npm run typecheck`（TS 严格检查）、`npm run lint`（ESLint，0 警告门禁）。
+其他脚本：`npm run typecheck`（TS 严格检查）、`npm run lint`（ESLint，0 警告门禁）、`npm test`（vitest，渲染管线单测）。
 
 ## 功能
 

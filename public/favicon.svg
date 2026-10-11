@@ -1,17 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#7C3AED"/>
-    </linearGradient>
-  </defs>
-  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#g)"/>
-  <g stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round">
-    <line x1="24" y1="27" x2="24" y2="14"/>
-    <line x1="24" y1="27" x2="13.5" y2="34.5"/>
-    <line x1="24" y1="27" x2="34.5" y2="34.5"/>
-  </g>
-  <circle cx="24" cy="27" r="4.4" fill="#FFFFFF"/>
-  <circle cx="24" cy="12.8" r="3.1" fill="#FFFFFF"/>
-  <circle cx="12.8" cy="35.2" r="3.1" fill="#FFFFFF"/>
-  <circle cx="35.2" cy="35.2" r="3.1" fill="#FFFFFF"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><title>公众号排版</title><g transform="translate(-29.31 -29.31) scale(1.229)">
+  <path fill="#1D3045" fill-rule="evenodd" d="
+    M80 32h96c28 0 52 24 52 52v88c0 28-24 52-52 52H80c-28 0-52-24-52-52V84c0-28 24-52 52-52z
+    M104 68v120h20V68h-20z
+    M172 68v120h20V68h-20z
+    M138 100v56h20v-56h-20z"/>
+</g></svg>

@@ -1,5 +1,7 @@
 node_modules/
 dist/
+# Rust build output (Tauri) — can reach GBs
+src-tauri/target/
 .DS_Store
 *.local
 .vscode/
@@ -18,13 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# tsc -b emit artifacts (tsconfig.node.json is composite)
-vite.config.js
-vite.config.d.ts
-vitest.config.js
-vitest.config.d.ts
-*.tsbuildinfo
-
 # Local tooling (openspec-pw scaffold) — not part of the repo
 tests/
 playwright.config.ts
@@ -32,3 +27,18 @@ playwright.config.ts
 .mcp.json
 AGENTS.md
 CLAUDE.md
+# openspec-pw: begin managed block
+.cursor/
+.opencode/
+.cline/
+.pi/
+.omp/
+.codebuddy/
+.codegraph/
+.playwright-mcp/
+openspec/
+CODEBUDDY.md
+app-exploration.md
+opencode.json
+playwright/.auth/
+# openspec-pw: end managed block

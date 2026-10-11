@@ -10,9 +10,12 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
+    // 专用固定端口：tauri.conf.json 的 devUrl 绑定此端口。
+    // strictPort 让端口冲突直接失败，而不是静默顺延后让 Tauri 窗口
+    // 加载到占用该端口的其它应用。
+    port: 5188,
     host: '127.0.0.1',
-    strictPort: false,
+    strictPort: true,
   },
   preview: {
     port: 4173,

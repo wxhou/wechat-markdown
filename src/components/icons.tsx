@@ -1,26 +1,22 @@
 /**
- * Site logo SVG — verbatim from the original AGPL-3.0 project
- * (https://studio.yituohub.com/, https://github.com/yan9651688/yituo-hub).
+ * Site logo — 版心 mark (this project's own logo). Reuses the exact
+ * 256-viewBox geometry from public/favicon.svg / Tauri app icons so every
+ * surface renders the identical mark.
  */
 export function LogoSvg({ size = 34 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 256 256" aria-hidden="true">
       <defs>
         <linearGradient id="yt-logo" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#33546F" />
           <stop offset="1" stopColor="#1D3045" />
         </linearGradient>
       </defs>
-      <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#yt-logo)" />
-      <g stroke="#FFFFFF" strokeWidth="2.6" strokeLinecap="round">
-        <line x1="24" y1="27" x2="24" y2="14" />
-        <line x1="24" y1="27" x2="13.5" y2="34.5" />
-        <line x1="24" y1="27" x2="34.5" y2="34.5" />
-      </g>
-      <circle cx="24" cy="27" r="4.4" fill="#FFFFFF" />
-      <circle cx="24" cy="12.8" r="3.1" fill="#FFFFFF" />
-      <circle cx="12.8" cy="35.2" r="3.1" fill="#FFFFFF" />
-      <circle cx="35.2" cy="35.2" r="3.1" fill="#FFFFFF" />
+      <path
+        fill="url(#yt-logo)"
+        fillRule="evenodd"
+        d="M80 32h96c28 0 52 24 52 52v88c0 28-24 52-52 52H80c-28 0-52-24-52-52V84c0-28 24-52 52-52z M104 68v120h20V68h-20z M172 68v120h20V68h-20z M138 100v56h20v-56h-20z"
+      />
     </svg>
   );
 }

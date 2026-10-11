@@ -327,10 +327,17 @@ export function useStudio() {
    * Ratio-based mapping between the editor textarea and the preview wrap.
    * The iframe is sized to full content height (original site's design), so
    * the *wrap* is the scrollable preview surface, not the iframe document.
-   * A source tag suppresses echo loops across one animation frame.
+   * Echo suppression is position-based: before programmatically setting a
+   * scroll position we record the expected value; an incoming event whose
+   * position matches it is our own write-back, not a user scroll. This
+   * works on engines with async scroll event delivery (WKWebView), where a
+   * time-based lock is unreliable.
    */
-  const scrollLockRef = useRef<'editor' | 'preview' | null>(null);
   const editorRef = useRef<HTMLTextAreaElement | null>(null);
+  const scrollEchoRef = useRef<{ editor: number | null; preview: number | null }>({
+    editor: null,
+    preview: null,
+  });
 
   useEffect(() => {
     if (!ready) return;
@@ -338,30 +345,35 @@ export function useStudio() {
     const wrap = previewWrap.current;
     if (!editor || !wrap) return;
 
-    const ratioOf = (el: HTMLElement | HTMLTextAreaElement) => {
-      const max = el.scrollHeight - el.clientHeight;
-      return max > 0 ? el.scrollTop / max : 0;
+    const maxOf = (el: HTMLElement | HTMLTextAreaElement) => el.scrollHeight - el.clientHeight;
+    const isEcho = (key: 'editor' | 'preview', el: HTMLElement | HTMLTextAreaElement) => {
+      const expected = scrollEchoRef.current[key];
+      if (expected === null) return false;
+      if (Math.abs(el.scrollTop - expected) <= 2) {
+        scrollEchoRef.current[key] = null;
+        return true;
+      }
+      // A real user scroll displaced us from the expected write; forget it.
+      scrollEchoRef.current[key] = null;
+      return false;
     };
 
-    let raf = 0;
-    const applyTo = (source: HTMLElement | HTMLTextAreaElement, target: HTMLElement | HTMLTextAreaElement) => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const max = target.scrollHeight - target.clientHeight;
-        target.scrollTop = ratioOf(source) * max;
-        scrollLockRef.current = null;
-      });
+    const applyTo = (source: HTMLElement | HTMLTextAreaElement, target: HTMLElement | HTMLTextAreaElement, key: 'editor' | 'preview') => {
+      const max = maxOf(target);
+      if (max <= 0) return;
+      const ratio = maxOf(source) > 0 ? source.scrollTop / maxOf(source) : 0;
+      const next = ratio * max;
+      scrollEchoRef.current[key] = next;
+      target.scrollTop = next;
     };
 
     const onEditorScroll = () => {
-      if (scrollLockRef.current === 'preview') return;
-      scrollLockRef.current = 'editor';
-      applyTo(editor, wrap);
+      if (isEcho('editor', editor)) return;
+      applyTo(editor, wrap, 'preview');
     };
     const onWrapScroll = () => {
-      if (scrollLockRef.current === 'editor') return;
-      scrollLockRef.current = 'preview';
-      applyTo(wrap, editor);
+      if (isEcho('preview', wrap)) return;
+      applyTo(wrap, editor, 'editor');
     };
 
     editor.addEventListener('scroll', onEditorScroll, { passive: true });
@@ -369,7 +381,7 @@ export function useStudio() {
     return () => {
       editor.removeEventListener('scroll', onEditorScroll);
       wrap.removeEventListener('scroll', onWrapScroll);
-      cancelAnimationFrame(raf);
+      scrollEchoRef.current = { editor: null, preview: null };
     };
   }, [ready]);
 

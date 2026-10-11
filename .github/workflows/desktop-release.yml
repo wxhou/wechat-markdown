@@ -46,6 +46,22 @@ jobs:
           npm ci
           npm run build
 
+      - name: Delete stale release assets (rerun-safe re-upload)
+        if: github.ref_type == 'tag'
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          RELEASE_ID=$(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${TAG}" --jq '.id' 2>/dev/null || true)
+          if [ -n "$RELEASE_ID" ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets" --paginate \
+              --jq '.[].name' | while read -r name; do
+              gh api -X DELETE "repos/${GITHUB_REPOSITORY}/releases/assets/$(
+                gh api "repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets" --jq ".[] | select(.name==\"$name\") | .id")" >/dev/null 2>&1 || true
+            done
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

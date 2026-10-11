@@ -27,7 +27,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["dmg", "app", "nsis", "appimage", "deb", "rpm"],
     "category": "Productivity",
     "shortDescription": "把 Markdown 排成公众号可直接粘贴的精致 HTML",
     "longDescription": "粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML；33 套主题 / 4 大合集，含合规校验与三项导出。",

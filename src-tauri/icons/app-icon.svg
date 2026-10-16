@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10.5 -10.5 277 277" width="1024" height="1024">
+  <title>公众号排版</title>
+  <g transform="translate(-29.31 -29.31) scale(1.229)">
+    <path fill="#33546F" d="M80 32h96c28 0 52 24 52 52v88c0 28-24 52-52 52H80c-28 0-52-24-52-52V84c0-28 24-52 52-52z"/>
+    <path fill="#FFFFFF" d="M104 68h20v120h-20z
+      M172 68h20v120h-20z
+      M138 100h20v56h-20z"/>
+  </g>
+</svg>

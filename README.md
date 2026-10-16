@@ -23,6 +23,8 @@ npm install
 npm run tauri:build   # 产物在 src-tauri/target/release/bundle/
 ```
 
+应用图标源文件为 `src-tauri/icons/app-icon.svg`，改动后执行 `npx tauri icon src-tauri/icons/app-icon.svg` 重新生成全套图标（含 macOS `.icns` / Windows `.ico` / Android / iOS）。
+
 ## 快速开始（网页版）
 
 ```bash

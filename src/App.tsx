@@ -1,13 +1,13 @@
+import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import StudioPage from './pages/StudioPage';
-
-// Tauri injects this global into the WebView; the desktop build skips the
-// landing page and opens the studio directly (design decision 3).
-const isTauri = '__TAURI_INTERNALS__' in window;
+import { bootThemeMode } from './lib/theme-mode';
+import { isTauri } from './lib/platform';
 
 export default function App() {
+  useEffect(() => bootThemeMode(), []);
   return (
     <BrowserRouter>
       <Routes>

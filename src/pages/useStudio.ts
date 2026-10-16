@@ -1,4 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { DragEvent as ReactDragEvent } from 'react';
+import type { EditorView } from '@codemirror/view';
+import { undo } from '@codemirror/commands';
+import { wordCountStats } from '../lib/word-count';
+import { exportBaseTitle } from '../lib/md-export-name';
 import {
   loadStudioGlobals,
   ensureHtml2canvas,
@@ -108,6 +113,7 @@ interface ConvertOpts {
 
 /* ---------- session persistence (project addition) ---------- */
 const STORE_KEY = 'md2gzh.v1.session';
+const MD_FILE_RE = /\.(?:md|markdown)$/i;
 
 interface StoredSession {
   markdown: string;
@@ -145,6 +151,7 @@ export function useStudio() {
   const [colorId, setColorId] = useState(saved.colorId ?? 'default');
   const [previewWidth, setPreviewWidth] = useState<PreviewWidth>(saved.previewWidth ?? 'fit');
   const [group, setGroup] = useState('all');
+  const stats = useMemo(() => wordCountStats(markdown), [markdown]);
 
   const [openPop, setOpenPop] = useState<OpenPopover>(null);
 
@@ -152,6 +159,10 @@ export function useStudio() {
   const [panelLines, setPanelLines] = useState<Array<{ kind: 'err' | 'warn'; text: string }>>([]);
   const [panelHidden, setPanelHidden] = useState(true);
   const [toast, setToast] = useState<ToastState | null>(null);
+  const [viewMode, setViewMode] = useState<'preview' | 'source'>('preview');
+  const [sourceHtml, setSourceHtml] = useState('');
+  const [dropOver, setDropOver] = useState(false);
+  const [pendingDrop, setPendingDrop] = useState<{ name: string; text: string } | null>(null);
 
   const previewFrame = useRef<HTMLIFrameElement | null>(null);
   const previewWrap = useRef<HTMLDivElement | null>(null);
@@ -324,16 +335,17 @@ export function useStudio() {
   }, [ready, previewWidth, applyPreviewLayout]);
 
   /* ---------- bidirectional scroll sync ----------
-   * Ratio-based mapping between the editor textarea and the preview wrap.
-   * The iframe is sized to full content height (original site's design), so
-   * the *wrap* is the scrollable preview surface, not the iframe document.
+   * Ratio-based mapping between the editor and the preview wrap. The iframe
+   * is sized to full content height (original site's design), so the *wrap* is
+   * the scrollable preview surface, not the iframe document. The editor side is
+   * CodeMirror's own scroller (view.scrollDOM).
    * Echo suppression is position-based: before programmatically setting a
    * scroll position we record the expected value; an incoming event whose
    * position matches it is our own write-back, not a user scroll. This
    * works on engines with async scroll event delivery (WKWebView), where a
    * time-based lock is unreliable.
    */
-  const editorRef = useRef<HTMLTextAreaElement | null>(null);
+  const [editorView, setEditorView] = useState<EditorView | null>(null);
   const scrollEchoRef = useRef<{ editor: number | null; preview: number | null }>({
     editor: null,
     preview: null,
@@ -341,12 +353,12 @@ export function useStudio() {
 
   useEffect(() => {
     if (!ready) return;
-    const editor = editorRef.current;
+    const editor = editorView?.scrollDOM;
     const wrap = previewWrap.current;
     if (!editor || !wrap) return;
 
-    const maxOf = (el: HTMLElement | HTMLTextAreaElement) => el.scrollHeight - el.clientHeight;
-    const isEcho = (key: 'editor' | 'preview', el: HTMLElement | HTMLTextAreaElement) => {
+    const maxOf = (el: HTMLElement) => el.scrollHeight - el.clientHeight;
+    const isEcho = (key: 'editor' | 'preview', el: HTMLElement) => {
       const expected = scrollEchoRef.current[key];
       if (expected === null) return false;
       if (Math.abs(el.scrollTop - expected) <= 2) {
@@ -358,7 +370,7 @@ export function useStudio() {
       return false;
     };
 
-    const applyTo = (source: HTMLElement | HTMLTextAreaElement, target: HTMLElement | HTMLTextAreaElement, key: 'editor' | 'preview') => {
+    const applyTo = (source: HTMLElement, target: HTMLElement, key: 'editor' | 'preview') => {
       const max = maxOf(target);
       if (max <= 0) return;
       const ratio = maxOf(source) > 0 ? source.scrollTop / maxOf(source) : 0;
@@ -383,13 +395,14 @@ export function useStudio() {
       wrap.removeEventListener('scroll', onWrapScroll);
       scrollEchoRef.current = { editor: null, preview: null };
     };
-  }, [ready]);
+  }, [ready, editorView]);
 
   const commitHtml = useCallback(
     (html: string, advanced: boolean) => {
       const g = Gv();
       htmlRef.current = html;
       dirtyRef.current = false;
+      setSourceHtml(html);
       if (previewFrame.current) previewFrame.current.srcdoc = previewShell(html, advanced);
       const result = g.Md2GZHValidator.validate(html);
       setBadge({
@@ -412,6 +425,7 @@ export function useStudio() {
   const renderFailure = useCallback(
     (error: unknown) => {
       htmlRef.current = '';
+      setSourceHtml('');
       const message = error instanceof Error ? error.message : String(error);
       setBadge({ cls: 'badge bad', text: '✗ 高级排版载入失败' });
       setPanelLines([{ kind: 'err', text: message }]);
@@ -555,8 +569,6 @@ export function useStudio() {
     (extension: string) => {
       const g = Gv();
       const s = g.Md2GZHThemes.getSpec(themeId);
-      const title = (markdown.match(/^#\s*(.+)$/m) || [])[1] || '文章';
-      const name = title.trim().replace(/[\\/:*?"<>| ]/g, '_').slice(0, 30);
       let suffix = `${s.name}(${s.id})`;
       if ((s.group as string) === 'motion' && currentLevel) {
         suffix += `_L${currentLevel.order}_${currentLevel.short}`;
@@ -564,7 +576,7 @@ export function useStudio() {
         const cw = (colorways ?? []).find((c) => c.id === colorId);
         if (cw && cw.id !== 'default') suffix += `_${cw.name}`;
       }
-      return `${name}_排版_${suffix}.${extension}`;
+      return `${exportBaseTitle(markdown)}_排版_${suffix}.${extension}`;
     },
     [Gv, themeId, markdown, currentLevel, isDynamicLevel, motionEnabled, colorways, colorId],
   );
@@ -605,6 +617,23 @@ export function useStudio() {
     }
     return !!htmlRef.current;
   }, [convert]);
+
+  const exportMarkdown = useCallback(() => {
+    if (!markdown.trim()) {
+      setToast({ text: '先粘贴一点内容' });
+      return;
+    }
+    saveBlob(new Blob([markdown], { type: 'text/markdown;charset=utf-8' }), `${exportBaseTitle(markdown)}.md`);
+  }, [markdown]);
+
+  const copySourceHtml = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(htmlRef.current);
+      setToast({ text: '✓ 源码已复制（纯文本）' });
+    } catch {
+      setToast({ text: '复制失败，请手动选取源码复制' });
+    }
+  }, []);
 
   const copyToWechat = useCallback(async () => {
     try {
@@ -716,22 +745,109 @@ export function useStudio() {
     setOpenPop(null);
   };
 
+  /* 程序化写入走 CM 事务全量替换：落在历史栈内，一次撤销即可回退 */
+  const replaceDoc = useCallback(
+    (text: string) => {
+      const view = editorView;
+      if (!view) {
+        setMarkdown(text);
+        return;
+      }
+      const current = view.state.doc.toString();
+      if (current === text) return;
+      view.dispatch({
+        changes: { from: 0, to: current.length, insert: text },
+        userEvent: 'input.complete',
+      });
+    },
+    [editorView],
+  );
+
+  const loadSample = () => replaceDoc(SAMPLE_MD);
+
   const clearAll = () => {
-    const prev = markdown;
-    if (!prev) return;
-    setMarkdown('');
+    if (!markdown) return;
+    replaceDoc('');
     setToast({
       text: '已清空',
       action: {
         label: '撤销',
         run: () => {
-          setMarkdown(prev);
+          if (editorView) undo(editorView);
           setToast(null);
         },
       },
     });
-    editorRef.current?.focus();
+    editorView?.focus();
   };
+
+  /* ---------- 拖拽 .md 文件打开 ---------- */
+  const onEditorDragOver = useCallback((e: ReactDragEvent<HTMLElement>) => {
+    if (!(e.dataTransfer?.types ?? []).includes('Files')) return;
+    e.preventDefault();
+    setDropOver(true);
+  }, []);
+
+  const onEditorDragLeave = useCallback(() => {
+    setDropOver(false);
+  }, []);
+
+  const onDropFiles = useCallback(
+    (files: File[]) => {
+      setDropOver(false);
+      const file = files.find((f) => MD_FILE_RE.test(f.name));
+      if (!file) {
+        if (files.length > 0) {
+          setToast({ text: '仅支持 Markdown 文件（.md / .markdown）' });
+        }
+        return;
+      }
+      void file.text().then((text) => {
+        if (markdown.trim() && markdown !== text) {
+          setPendingDrop({ name: file.name, text });
+          return;
+        }
+        if (markdown === text) {
+          setToast({ text: '文件与当前内容相同，未改动' });
+          return;
+        }
+        replaceDoc(text);
+      });
+    },
+    [markdown, replaceDoc],
+  );
+
+  const onEditorDrop = useCallback(
+    (e: ReactDragEvent<HTMLElement>) => {
+      e.preventDefault();
+      onDropFiles(Array.from(e.dataTransfer?.files ?? []));
+    },
+    [onDropFiles],
+  );
+
+  const resolveDrop = useCallback(
+    (action: 'replace' | 'append' | 'cancel') => {
+      if (!pendingDrop) return;
+      setPendingDrop(null);
+      if (action === 'cancel') return;
+      if (action === 'replace') {
+        replaceDoc(pendingDrop.text);
+        return;
+      }
+      const joiner = markdown && !markdown.endsWith('\n') ? '\n' : '';
+      replaceDoc(markdown + joiner + pendingDrop.text);
+    },
+    [pendingDrop, markdown, replaceDoc],
+  );
+
+  useEffect(() => {
+    if (!pendingDrop) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPendingDrop(null);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [pendingDrop]);
 
   return {
     ready,
@@ -749,14 +865,16 @@ export function useStudio() {
     specs, libraries, groups, libraryThemes, libraryForTheme, selectedLibrary, currentSpec, isOriginalSpec,
     levels, currentLevel, isDynamicLevel,
     colorways, colorVisible, colorwayDots,
+    stats, viewMode, setViewMode, sourceHtml, copySourceHtml,
+    exportMarkdown,
+    dropOver, pendingDrop, onEditorDragOver, onEditorDragLeave, onEditorDrop, onDropFiles, resolveDrop,
     badge, panelLines, panelHidden, setPanelHidden,
     toast, setToast,
-    previewFrame, previewWrap, editorRef,
+    previewFrame, previewWrap, setEditorView,
     applyPreviewLayout,
     copyToWechat, download, exportLongImage,
     exportBusy,
-    clearAll,
-    SAMPLE_MD,
+    clearAll, loadSample,
   };
 }
 

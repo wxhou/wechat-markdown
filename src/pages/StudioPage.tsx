@@ -3,14 +3,20 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ChevronIcon,
+  CodeIcon,
+  CopyIcon,
   DownloadIcon,
   ImageIcon,
   LogoSvg,
 } from '../components/icons';
 import { useStudio } from './useStudio';
 import type { StudioState } from './useStudio';
+import ThemeModeControl from '../components/ThemeModeControl';
+import CodeEditor from '../components/CodeEditor';
+import { isTauri } from '../lib/platform';
 
-/* ---------- verbatim markup mirror of studio.html ---------- */
+/* 工坊页布局沿用原站 studio.html 的骨架，在此之上为本站增量扩展
+ * （字数统计、快捷键、源码视图、拖拽打开等），不再是逐字节镜像。 */
 
 export default function StudioPage() {
   const s = useStudio();
@@ -32,13 +38,20 @@ export default function StudioPage() {
           </div>
         </div>
         <div className="actions">
-          <a className="btn ghost" href="/">
-            <ArrowLeftIcon />
-            首页
-          </a>
+          {/* 桌面构建无落地页（/ 被重定向回本页），首页入口只会变成死控件 */}
+          {!isTauri && (
+            <a className="btn ghost" href="/">
+              <ArrowLeftIcon />
+              首页
+            </a>
+          )}
           <button id="btnDownload" className="btn ghost" type="button" onClick={s.download}>
             <DownloadIcon />
             下载 HTML
+          </button>
+          <button id="btnExportMd" className="btn ghost" type="button" onClick={s.exportMarkdown}>
+            <DownloadIcon />
+            导出 Markdown
           </button>
           <button id="btnExportImage" className="btn ghost" type="button" onClick={s.exportLongImage} disabled={s.exportBusy}>
             {s.exportBusy ? '正在生成…' : (
@@ -52,11 +65,17 @@ export default function StudioPage() {
             复制到公众号
             <ArrowRightIcon size={15} />
           </button>
+          <ThemeModeControl />
         </div>
       </header>
 
       <main className="workspace rise" style={{ animationDelay: '.08s' }}>
-        <section className="pane editor-pane">
+        <section
+          className={`pane editor-pane${s.dropOver ? ' drag-over' : ''}`}
+          onDragOver={s.onEditorDragOver}
+          onDragLeave={s.onEditorDragLeave}
+          onDrop={s.onEditorDrop}
+        >
           <div className="pane-toolbar">
             <strong>Markdown</strong>
             <span className="picker-slot">
@@ -79,27 +98,61 @@ export default function StudioPage() {
                 onChange={(e) => s.setAuthor(e.target.value)}
               />
             </label>
-            <button className="btn tiny ghost" type="button" onClick={() => s.setMarkdown(s.SAMPLE_MD)}>
+            <span className="doc-stat">
+              {s.stats.chars.toLocaleString()} 字 · 约 {s.stats.minutes} 分钟
+            </span>
+            <button className="btn tiny ghost" type="button" onClick={s.loadSample}>
               载入示例
             </button>
             <button className="btn tiny ghost" type="button" onClick={s.clearAll}>
               清空
             </button>
           </div>
-          <textarea
-            id="editor"
-            ref={s.editorRef}
-            aria-label="Markdown 编辑区"
-            spellCheck={false}
-            placeholder={'把文章 Markdown 粘进来，右侧立即预览…\n\n支持：# 标题 / ## 章节 / **加粗**(自动升级为关键词下划线) / ==高亮== / ++下划线++ / 代码块 / 图片 / 表格 / 引用'}
+          <CodeEditor
             value={s.markdown}
-            onChange={(e) => s.setMarkdown(e.target.value)}
+            onChange={s.setMarkdown}
+            onSave={() => void s.download()}
+            onDropFiles={s.onDropFiles}
+            onViewReady={s.setEditorView}
           />
+          {s.pendingDrop && (
+            <div className="drop-confirm" role="alertdialog" aria-label="处理拖入的 Markdown 文件">
+              <span>「{s.pendingDrop.name}」与当前内容不同，如何处理？</span>
+              <button type="button" className="btn tiny" onClick={() => s.resolveDrop('replace')}>
+                替换
+              </button>
+              <button type="button" className="btn tiny ghost" onClick={() => s.resolveDrop('append')}>
+                追加
+              </button>
+              <button type="button" className="btn tiny ghost" onClick={() => s.resolveDrop('cancel')}>
+                取消
+              </button>
+            </div>
+          )}
         </section>
 
         <section className="pane preview-pane">
           <div className="pane-toolbar">
             <strong>公众号预览</strong>
+            <div className="view-toggle" role="group" aria-label="预览视图切换">
+              <button
+                type="button"
+                className={`btn tiny ghost${s.viewMode === 'preview' ? ' active' : ''}`}
+                aria-pressed={s.viewMode === 'preview'}
+                onClick={() => s.setViewMode('preview')}
+              >
+                预览
+              </button>
+              <button
+                type="button"
+                className={`btn tiny ghost${s.viewMode === 'source' ? ' active' : ''}`}
+                aria-pressed={s.viewMode === 'source'}
+                onClick={() => s.setViewMode('source')}
+              >
+                <CodeIcon />
+                源码
+              </button>
+            </div>
             <button
               type="button"
               className={s.badge.cls}
@@ -138,7 +191,21 @@ export default function StudioPage() {
               title="排版预览"
               ref={s.previewFrame}
               onLoad={s.applyPreviewLayout}
+              style={{ visibility: s.viewMode === 'source' ? 'hidden' : 'visible' }}
             />
+            {s.viewMode === 'source' && (
+              <div className="source-view">
+                <div className="source-bar">
+                  <strong>渲染源码</strong>
+                  <span>与「复制到公众号」写入剪贴板的内容一致</span>
+                  <button className="btn tiny ghost" type="button" onClick={s.copySourceHtml}>
+                    <CopyIcon />
+                    复制
+                  </button>
+                </div>
+                <pre>{s.sourceHtml || ''}</pre>
+              </div>
+            )}
           </div>
           {!s.panelHidden && s.panelLines.length > 0 && (
             <div className="valid-panel">

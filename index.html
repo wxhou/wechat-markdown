@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script>
+  /* 首绘前落 data-theme，避免系统深色下闪浅色。规则以 src/lib/theme-mode.ts
+     为锚定：md2gzh.v1.theme 取 auto/light/dark，缺省/非法/异常一律按 auto 随 matchMedia 决议。 */
+  (function () {
+    var mode = null;
+    try { mode = localStorage.getItem('md2gzh.v1.theme'); } catch (e) {}
+    if (mode !== 'light' && mode !== 'dark') {
+      mode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.dataset.theme = mode;
+  })();
+</script>
 <title>公众号排版 · 把 Markdown 排成高级感</title>
 <meta name="description" content="粘贴 Markdown，一键排版为可直接粘贴到微信公众号编辑器的精致 HTML；33 套主题 / 4 大合集，含合规校验、双向同步滚动与长图导出"/>
 <meta property="og:title" content="公众号排版 · 把 Markdown 排成高级感"/>
@@ -34,16 +46,16 @@
   .toast-action {
     margin-left: 12px;
     padding: 2px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(var(--paper-rgb), 0.55);
     border-radius: 999px;
     background: transparent;
-    color: #fff;
+    color: var(--paper);
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
   }
   .toast-action:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(var(--paper-rgb), 0.15);
   }
 </style>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>

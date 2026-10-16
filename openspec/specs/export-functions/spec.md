@@ -32,3 +32,18 @@
 #### Scenario: 快速编辑后立即导出
 - **WHEN** 用户停止输入后 350ms 内点击"下载 HTML"
 - **THEN** 导出文件 SHALL 反映最新编辑内容
+
+### Requirement: 导出 Markdown
+顶栏 SHALL 提供「导出 Markdown」操作，将当前编辑区的 Markdown 源文本下载为 `.md` 文件（UTF-8 编码）。文件名 SHALL 取编辑区中首个 `# ` 一级标题（净化非法文件名字符并截断至 30 字符），无标题时为「文章」；文件名 SHALL 不含主题 / 等级 / 配色后缀（Markdown 与排版无关，有别于「下载 HTML」）。内容为空时 SHALL 显示与「下载 HTML」同类的提示且不下载。
+
+#### Scenario: 命名与内容
+- **WHEN** 编辑区内容以「# 味道的故事」开头且用户点击导出 Markdown
+- **THEN** 下载的文件名为「味道的故事.md」，文件内容与编辑区文本完全一致
+
+#### Scenario: 无标题兜底
+- **WHEN** 编辑区内容不含一级标题
+- **THEN** 下载的文件名为「文章.md」
+
+#### Scenario: 空内容提示
+- **WHEN** 编辑区无内容且用户点击导出 Markdown
+- **THEN** 不触发下载，显示「先粘贴一点内容」类提示

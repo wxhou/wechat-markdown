@@ -3,7 +3,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   background: transparent;
-  border-bottom: 1px solid rgba(29, 48, 69, 0.07);
+  border-bottom: 1px solid rgba(var(--dark-rgb), 0.07);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -13,7 +13,7 @@
   height: 100vh;
   min-height: 620px;
   overflow: hidden;
-  background: linear-gradient(180deg, #DDE7EF 0%, #EAF0F5 46%, #F4F6F8 100%);
+  background: var(--scene-bg);
 }
 
 .layer { position: absolute; inset: 0; will-change: transform; transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
@@ -30,7 +30,7 @@
 .hero-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(244,246,248,.5) 0%, rgba(244,246,248,.08) 42%, rgba(244,246,248,.3) 100%);
+  background: var(--veil);
 }
 
 /* 鼠标动效：小点即时 + 圆环延迟追随 */
@@ -51,7 +51,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid rgba(29, 48, 69, 0.4);
+  border: 1.5px solid rgba(var(--dark-rgb), 0.4);
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: width 0.25s var(--ease), height 0.25s var(--ease), border-color 0.25s, background 0.25s;
@@ -59,8 +59,8 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .cursor-ring.hover {
   width: 56px;
   height: 56px;
-  border-color: rgba(29, 48, 69, 0.75);
-  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(var(--dark-rgb), 0.75);
+  background: rgba(var(--paper-rgb), 0.14);
 }
 @media (pointer: coarse) {
   body.landing, body.landing a, body.landing button { cursor: auto; }
@@ -79,19 +79,19 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .fog-a {
   width: 74vw; height: 34vh;
   left: -10vw; bottom: 30vh;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  background: radial-gradient(closest-side, rgba(var(--paper-rgb), 0.95), rgba(var(--paper-rgb), 0));
   animation: drift 42s ease-in-out infinite alternate;
 }
 .fog-b {
   width: 66vw; height: 30vh;
   right: -12vw; bottom: 17vh;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0));
+  background: radial-gradient(closest-side, rgba(var(--paper-rgb), 0.88), rgba(var(--paper-rgb), 0));
   animation: drift 58s ease-in-out infinite alternate-reverse;
 }
 .fog-c {
   width: 46vw; height: 22vh;
   left: 24vw; bottom: 6vh;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  background: radial-gradient(closest-side, rgba(var(--paper-rgb), 0.75), rgba(var(--paper-rgb), 0));
   animation: drift 50s ease-in-out infinite alternate;
 }
 
@@ -107,7 +107,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   font-size: 11px;
   letter-spacing: 0.34em;
   font-weight: 600;
-  color: rgba(29, 48, 69, 0.62);
+  color: rgba(var(--dark-rgb), 0.62);
   text-transform: uppercase;
 }
 .scene-content h1 {
@@ -122,7 +122,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   margin: 26px 0 0;
   font-size: 11px;
   letter-spacing: 0.35em;
-  color: rgba(29, 48, 69, 0.58);
+  color: rgba(var(--dark-rgb), 0.58);
   text-transform: uppercase;
 }
 .cta-row { display: flex; align-items: center; gap: 26px; margin-top: 40px; }
@@ -130,9 +130,9 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .link-caps {
   font-size: 11px;
   letter-spacing: 0.28em;
-  color: rgba(29, 48, 69, 0.66);
+  color: rgba(var(--dark-rgb), 0.66);
   text-decoration: none;
-  border-bottom: 1px solid rgba(29, 48, 69, 0.25);
+  border-bottom: 1px solid rgba(var(--dark-rgb), 0.25);
   padding-bottom: 4px;
   transition: color 0.25s, border-color 0.25s;
 }
@@ -146,16 +146,16 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid rgba(29, 48, 69, 0.42);
+  border: 1px solid rgba(var(--dark-rgb), 0.42);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--dark);
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(var(--paper-rgb), 0.25);
   backdrop-filter: blur(2px);
   transition: background 0.3s, color 0.3s, transform 0.6s var(--ease), border-color 0.3s;
 }
-.circle-cta:hover { background: var(--dark); color: #fff; border-color: var(--dark); transform: translateX(5px); }
+.circle-cta:hover { background: var(--accent-solid); color: var(--paper); border-color: var(--accent-solid); transform: translateX(5px); }
 
 /* 背景切换器：底部居中的胶囊分段控件 */
 .bg-switcher {
@@ -168,8 +168,8 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   gap: 4px;
   padding: 5px;
   border-radius: 999px;
-  border: 1px solid rgba(29, 48, 69, 0.14);
-  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(var(--ink-fixed-rgb), 0.14);
+  background: rgba(var(--paper-rgb), 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -181,13 +181,13 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   font-size: 11px;
   letter-spacing: 0.12em;
   white-space: nowrap;
-  color: rgba(29, 48, 69, 0.62);
+  color: rgba(var(--ink-fixed-rgb), 0.62);
   background: transparent;
   cursor: pointer;
   transition: background 0.25s, color 0.25s;
 }
-.bg-switcher button:hover { color: var(--dark); }
-.bg-switcher button.active { background: var(--dark); color: #fff; }
+.bg-switcher button:hover { color: var(--ink-fixed); }
+.bg-switcher button.active { background: var(--accent-solid); color: var(--paper); }
 
 .scene-foot {
   position: absolute;
@@ -198,7 +198,7 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   padding: 20px 5vw 24px;
   font-size: 10px;
   letter-spacing: 0.24em;
-  color: rgba(29, 48, 69, 0.5);
+  color: rgba(var(--dark-rgb), 0.5);
   text-transform: uppercase;
 }
 

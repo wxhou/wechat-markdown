@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, LogoSvg } from '../components/icons';
+import ThemeModeControl from '../components/ThemeModeControl';
 
 /** 主页背景候选（Unsplash 免版权直链下载的本地副本，assets/ 下随构建分发） */
 const HERO_BACKGROUNDS = [
@@ -143,6 +144,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="actions">
+          <ThemeModeControl />
           <a className="btn ghost" href="/studio">
             进入工坊
           </a>

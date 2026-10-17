@@ -1,16 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, LogoSvg } from '../components/icons';
+import DownloadSection from '../components/DownloadSection';
 import ThemeModeControl from '../components/ThemeModeControl';
 
-/** 主页背景候选（Unsplash 免版权直链下载的本地副本，assets/ 下随构建分发） */
+/** 主页背景候选（本地副本，assets/ 下随构建分发；来源与许可见 HERO_CREDITS） */
 const HERO_BACKGROUNDS = [
-  { id: 'alpine', src: 'assets/mountains-hero.jpg', label: '雪山' },
-  { id: 'misty', src: 'assets/hero-misty-peaks.jpg', label: '雾山' },
   { id: 'clouds', src: 'assets/hero-cloud-sea.jpg', label: '云海' },
-  { id: 'forest', src: 'assets/hero-snow-forest.jpg', label: '雪林' },
+  { id: 'alpine', src: 'assets/mountains-hero.jpg', label: '雪山' },
+  { id: 'lake', src: 'assets/hero-lake.jpg', label: '湖光' },
+  { id: 'forest', src: 'assets/hero-forest.jpg', label: '森林' },
 ] as const;
 
 type HeroBgId = (typeof HERO_BACKGROUNDS)[number]['id'];
+
+/** 需署名的背景（CC BY-SA 要求署名）：只在选中它时展示。
+    其余三张是 Commons 上的 CC0 实拍（湖光 纳木错乡 Unsplash / 云海 庐山含鄱口 / 森林 Fog descending on a pine forest），无需署名。
+    雪山 = 祁连山脉东段岗什卡雪峰（Commons `File:岗什卡雪峰.jpg`），只取原图上 58%（裁掉下方农田）后压到 2400px 宽，故署名里标注裁切 */
+const HERO_CREDITS: Partial<Record<HeroBgId, { name: string; author: string; source: string; license: string; licenseUrl: string }>> = {
+  alpine: {
+    name: '岗什卡雪峰（裁切）',
+    author: 'NoGhost',
+    source: 'https://commons.wikimedia.org/wiki/File:%E5%B2%97%E4%BB%80%E5%8D%A1%E9%9B%AA%E5%B3%B0.jpg',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+  },
+};
 
 const HERO_BG_KEY = 'md2gzh.v1.heroBg';
 
@@ -21,7 +35,7 @@ function loadHeroBg(): HeroBgId {
   } catch {
     // 隐私模式等 localStorage 不可用时走默认
   }
-  return 'misty';
+  return 'clouds';
 }
 
 /**
@@ -33,6 +47,7 @@ export default function LandingPage() {
   const layersRef = useRef<Array<HTMLElement | null>>([]);
   const [heroBg, setHeroBg] = useState<HeroBgId>(loadHeroBg);
   const [revealed, setRevealed] = useState<ReadonlySet<HeroBgId>>(() => new Set([loadHeroBg()]));
+  const credit = HERO_CREDITS[heroBg];
 
   const selectBg = (id: HeroBgId) => {
     setHeroBg(id);
@@ -140,7 +155,6 @@ export default function LandingPage() {
           </span>
           <div>
             <h1>公众号排版</h1>
-            <p>Markdown → WeChat HTML Studio</p>
           </div>
         </div>
         <div className="actions">
@@ -208,7 +222,24 @@ export default function LandingPage() {
             </button>
           ))}
         </div>
+
+        {credit && (
+          <p className="scene-credit">
+            背景：
+            <a href={credit.source} target="_blank" rel="noopener noreferrer">
+              {credit.name}
+            </a>
+            {' · 摄影 '}
+            {credit.author}
+            {' · '}
+            <a href={credit.licenseUrl} target="_blank" rel="noopener noreferrer">
+              {credit.license}
+            </a>
+          </p>
+        )}
       </main>
+
+      <DownloadSection />
     </>
   );
 }

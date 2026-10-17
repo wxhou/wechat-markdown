@@ -74,3 +74,36 @@ jobs:
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
+
+  publish-latest-json:
+    needs: build
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate latest.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view "${GITHUB_REF_NAME}" --json assets --jq '.assets[].name' \
+            | ./scripts/latest-json.sh "${GITHUB_REF_NAME}" > /tmp/latest.json
+          cat /tmp/latest.json
+
+      - name: Publish to main and deploy site
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 走 Contents API 而不是在 tag 的树上提交：tag 多半落后于 main，直接 push 会被非快进拒绝
+          SHA=$(gh api "repos/${GITHUB_REPOSITORY}/contents/public/latest.json" --jq '.sha' 2>/dev/null | grep -E '^[0-9a-f]{40}$' || true)
+          ARGS=(
+            -f message="chore(release): latest.json 更新至 ${GITHUB_REF_NAME}"
+            -f content="$(base64 -w0 /tmp/latest.json)"
+          )
+          if [ -n "$SHA" ]; then ARGS+=(-f sha="$SHA"); fi
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/contents/public/latest.json" "${ARGS[@]}" >/dev/null
+          # GITHUB_TOKEN 触发的 push 不产生新的 workflow run，故显式派发部署（workflow_dispatch 是官方例外）
+          gh workflow run deploy-pages.yml --ref main

@@ -4,3 +4,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
+
+# no-cache = 每次带校验重新获取：该文件由 CI 每次发版重写，缓存一版就会让版本徽标滞后一版
+/latest.json
+  Cache-Control: no-cache

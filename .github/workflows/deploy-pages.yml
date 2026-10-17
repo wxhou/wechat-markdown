@@ -1,0 +1,35 @@
+name: Deploy Site
+
+# main 每次变动 → 构建并发布到 Cloudflare Pages，站点内容因此等于 main 的最新提交
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 排队而不取消：发布是最后一次推送说了算，取消会让中间那次的结果无从解释
+concurrency:
+  group: deploy-pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=wechat-markdown

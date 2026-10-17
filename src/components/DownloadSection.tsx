@@ -55,20 +55,21 @@ export default function DownloadSection() {
   return (
     <section className="download" aria-labelledby="download-title">
       <div className="download-inner">
-        <p className="eyebrow">Desktop</p>
-        <h2 id="download-title">装到本机，离线也能排版</h2>
-        <p className="download-lead">编辑器、主题与导出都在本机完成，内容不上传。</p>
-        <p className="download-meta">
-          <span>
-            版本 <b>v{release.version}</b>
-          </span>
-          <span>macOS / Windows / Linux</span>
-          <span>安装包托管于 GitHub Releases</span>
-        </p>
+        <div className="download-head">
+          <p className="eyebrow">Desktop</p>
+          <h2 id="download-title">装到本机，离线也能排版</h2>
+          <p className="download-lead">编辑器、主题与导出都在本机完成，内容不上传。</p>
+          <p className="download-meta">
+            <span>
+              版本 <b>v{release.version}</b>
+            </span>
+            <span>安装包托管于 GitHub Releases</span>
+          </p>
+        </div>
 
-        <div className="download-columns">
+        <div className="download-register">
           {release.platforms.map((platform) => (
-            <div className="download-col" key={platform.id}>
+            <div className="download-row" key={platform.id}>
               <h3>{PLATFORM_TITLE[platform.id]}</h3>
               <ul className="download-formats">
                 {platform.items.map((item) => (

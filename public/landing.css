@@ -253,11 +253,16 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .download {
   position: relative;
   /* 左内边距跟 Hero 的 8vw 对齐：两屏共用同一条阅读起点 */
-  padding: 76px 5vw 84px 8vw;
+  padding: 84px 5vw 76px 8vw;
   background: var(--bg);
   border-top: 1px solid var(--line);
 }
-.download-inner { max-width: 1080px; }
+/* 左栏说明、右栏安装清单：清单吃满右侧，不再在版心外空出一截 */
+.download-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: start;
+}
 .download .eyebrow {
   margin: 0;
   font-size: 11px;
@@ -286,30 +291,31 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 }
 .download-meta b { font-weight: 500; color: var(--ink); letter-spacing: 0.02em; }
 
-/* 三栏以竖界行分隔；中间那道短一截，呼应版心 mark 的中柱 */
-.download-columns {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 38px;
-}
-.download-col { position: relative; display: flex; flex-direction: column; padding: 0 32px 0 28px; }
-.download-col::before {
+/* 安装清单：平台 / 安装包 / 首次启动，逐行以界行分隔 */
+.download-register { position: relative; padding-left: clamp(40px, 4vw, 72px); }
+/* 竖界行短一截，呼应版心 mark 的中柱 */
+.download-register::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
+  top: 18%;
+  bottom: 18%;
   width: 1px;
   background: var(--line);
 }
-.download-col:nth-child(2)::before { top: 30%; bottom: 30%; }
-.download-col h3 { margin: 0; font-size: 15px; font-weight: 650; letter-spacing: 0.02em; color: var(--ink); }
-.download-formats { list-style: none; margin: 14px 0 0; padding: 0; }
+.download-row {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  column-gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.download-row h3 { margin: 0; font-size: 15px; font-weight: 650; letter-spacing: 0.02em; color: var(--ink); }
+.download-formats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0; padding: 0; list-style: none; }
 .download-format {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
-  gap: 12px;
-  padding: 10px 0;
+  gap: 10px;
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s;
@@ -317,7 +323,6 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .download-format:hover { color: var(--ink); }
 .download-format:focus-visible { outline: 2px solid var(--accent-solid); outline-offset: 3px; }
 .download-ext {
-  min-width: 66px;
   font: 11px/1 "SF Mono", Menlo, Consolas, monospace;
   letter-spacing: 0.02em;
   color: var(--sub);
@@ -330,15 +335,16 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
   transition: border-color 0.2s;
 }
 .download-format:hover .download-label { border-bottom-color: var(--line-strong); }
-/* margin-top:auto 把说明压到栏底：三栏格式数不同，说明文字才能对齐成一行 */
-.download-hint { margin: auto 0 0; padding-top: 22px; font-size: 12px; line-height: 1.75; color: var(--sub); }
+/* 说明紧跟安装包，与格式名同列 */
+.download-hint { grid-column: 2; margin: 10px 0 0; font-size: 12px; line-height: 1.7; color: var(--sub); }
 
 .download-foot {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 24px;
-  margin-top: 46px;
+  margin-top: 44px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
   font-size: 12.5px;
@@ -353,13 +359,22 @@ body.landing.cursor-ready, body.landing.cursor-ready a, body.landing.cursor-read
 .download-foot a:hover { color: var(--ink); border-color: var(--line-strong); }
 .download-back { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
 
+/* 窄屏：说明与清单上下排，清单不再需要竖界行 */
+@media (max-width: 1200px) {
+  .download-inner { grid-template-columns: minmax(0, 1fr); }
+  .download-register { margin-top: 40px; padding-left: 0; }
+  .download-register::before { display: none; }
+}
+
+@media (min-width: 1201px) {
+  /* 版本与托管信息落到左栏底部，与清单末行同一基线 */
+  .download-head { display: flex; flex-direction: column; align-self: stretch; }
+  .download-meta { margin-top: auto; padding-top: 20px; }
+}
+
 @media (max-width: 900px) {
   .download { padding: 56px 6vw 64px; }
-  .download-columns { grid-template-columns: minmax(0, 1fr); margin-top: 30px; }
-  .download-col { padding: 26px 0 0; }
-  .download-col:first-child { padding-top: 0; }
-  .download-col::before { display: none; }
-  .download-col + .download-col { border-top: 1px solid var(--line); }
-  .download-hint { margin-top: 16px; padding-top: 0; }
+  .download-row { grid-template-columns: minmax(0, 1fr); row-gap: 10px; padding: 20px 0; }
+  .download-hint { grid-column: 1; margin-top: 0; }
   .download-foot { margin-top: 34px; }
 }

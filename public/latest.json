@@ -1,0 +1,13 @@
+{
+  "version": "0.2.1",
+  "tag": "v0.2.1",
+  "releaseUrl": "https://github.com/wxhou/wechat-markdown/releases/tag/v0.2.1",
+  "assets": {
+    "macos-arm64": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/_0.2.1_aarch64.dmg",
+    "macos-x64": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/_0.2.1_x64.dmg",
+    "windows-x64": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/_0.2.1_x64-setup.exe",
+    "linux-appimage": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/_0.2.1_amd64.AppImage",
+    "linux-deb": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/_0.2.1_amd64.deb",
+    "linux-rpm": "https://github.com/wxhou/wechat-markdown/releases/download/v0.2.1/-0.2.1-1.x86_64.rpm"
+  }
+}
